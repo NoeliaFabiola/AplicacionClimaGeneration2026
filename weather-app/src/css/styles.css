@@ -1,0 +1,182 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* 🌈 Fondo dinámico */
+body.cold {
+    background: linear-gradient(135deg, #5f9cff, #a8edea);
+}
+body.mild {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+body.hot {
+    background: linear-gradient(135deg, #f83600, #f9d423);
+}
+
+/* 📦 Contenedor */
+.app {
+    width: 360px;
+    padding: 2rem;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(20px);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    color: white;
+
+    animation: fadeIn 0.6s ease;
+}
+
+/* ✨ Título */
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* 🔍 Buscador */
+.search {
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+
+    background: rgba(255,255,255,0.3);
+    color: white;
+
+    transition: 0.3s;
+}
+
+.search input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.search input:focus {
+    background: rgba(255,255,255,0.5);
+}
+
+/* 🔘 Botón */
+.search button {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    color: #333;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.search button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.search button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+/* 🌡️ Card clima */
+.weather-card {
+    margin-top: 1.5rem;
+    text-align: center;
+    animation: slideUp 0.5s ease;
+}
+
+.temp {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.details {
+    opacity: 0.8;
+}
+
+/* 📡 Mensaje caché */
+.cache {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+/* ❌ Error */
+.error {
+    margin-top: 1rem;
+    color: #ffdddd;
+}
+
+/* ⏳ Loading */
+.loading {
+    margin-top: 1rem;
+    animation: pulse 1s infinite;
+}
+
+/* 🔍 Autocomplete */
+#autocomplete {
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.autocomplete-item:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* 🗺️ Mapa */
+#map {
+    height: 180px;
+    margin-top: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* ✨ Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
